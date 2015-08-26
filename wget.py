@@ -11,6 +11,7 @@ urlopener = urllib2.build_opener()
 #If the file already exists resume download, otherwise start from scratch
 if os.path.exists(file_name): 
   f=open(file_name,"ab")
+  #Obtain file size to pass as a header
   file_size_downloaded = os.path.getsize(file_name)
   urlopener.addheaders+=[("Range","bytes=%s-" % (file_size_downloaded))]
   print "RESUMING DOWNLOAD from "+str(file_size_downloaded)
@@ -19,6 +20,7 @@ else :
   f = open(file_name, 'wb')
   file_size_downloaded = 0
   print "STARTING DOWNLOAD"
+
 
 u=urlopener.open(url)
 meta = u.info()
