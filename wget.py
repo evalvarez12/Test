@@ -43,6 +43,7 @@ while True:
     if print_mark==30 :
       print status,
       print_mark=0
+    sys.stdout.flush()
       
 f.close()
     
