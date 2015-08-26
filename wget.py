@@ -21,7 +21,7 @@ else :
   file_size_downloaded = 0
   print "STARTING DOWNLOAD"
 
-
+#Open url and get the file size to be downloaded
 u=urlopener.open(url)
 meta = u.info()
 file_size = int(meta.getheaders("Content-Length")[0]) + file_size_downloaded
